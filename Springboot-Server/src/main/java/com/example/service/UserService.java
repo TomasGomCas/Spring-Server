@@ -32,6 +32,5 @@ public class UserService {
 	public void deleteUserByIdMockDB(int id){
 		this.mockDb.deleteUserById(id);
 	}
-	// GETTERS AND SETTERS
 	
 }

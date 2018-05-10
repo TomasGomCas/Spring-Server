@@ -14,35 +14,32 @@ import com.example.service.UserService;
 import com.example.struct.User;
 
 @RestController
+@RequestMapping("/users")
 public class UserController {
 
 	// ATRIBUTES
 	private @Autowired UserService userService;
 	
-	// CONSTRUCTORS
-	
 	// METHODS
-	@RequestMapping(value = "/users",method = RequestMethod.GET)
+	@RequestMapping(value = "",method = RequestMethod.GET)
 	public @ResponseBody LinkedList<User> getUsers() {
 		return this.userService.getAllUsersMockDB();
 	}
-	@RequestMapping(value = "/users/{id}",method = RequestMethod.GET)
+	@RequestMapping(value = "/{id}",method = RequestMethod.GET)
 	public User getUserId(@PathVariable int id) {
 		return this.userService.getUserByIdMockDB(id);
 	}
-	@RequestMapping(value = "/users",method = RequestMethod.POST)
+	@RequestMapping(value = "",method = RequestMethod.POST)
 	public void postUser(@RequestBody User user) {
 		this.userService.addUserMockDB(user);
 	}
-	@RequestMapping(value = "/users/{id}",method = RequestMethod.PATCH)
+	@RequestMapping(value = "/{id}",method = RequestMethod.PATCH)
 	public void patchUserById(@RequestBody User user,@PathVariable int id) {
 		this.userService.patchUserByIdMockDB(id, user);
 	}
-	@RequestMapping(value = "/users/{id}",method = RequestMethod.DELETE)
+	@RequestMapping(value = "/{id}",method = RequestMethod.DELETE)
 	public void deleteUserId(@PathVariable int id) {
 		this.userService.deleteUserByIdMockDB(id);
 	}
-
-	// GETTERS AND SETTERS
 	
 }

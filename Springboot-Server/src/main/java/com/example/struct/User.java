@@ -10,8 +10,7 @@ public class User {
 	// CONSTRUCTORS
 	public User() {
 		super();
-	}
-	
+	}	
 	public User(int user_id, String user_name, String user_password) {
 		super();
 		this.user_id = user_id;
